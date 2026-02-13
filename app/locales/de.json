@@ -49,10 +49,12 @@
     }
   },
   "navbar": {
+    "api": "API",
+    "contact": "Kontakt",
+    "links": "Links",
     "close": "Schließen",
     "maps": "Ebenen"
   },
-
   "footer": {
     "works": {
       "turkey_earthquake_map": "Erdbebenkarte Türkei 06.02.2023",

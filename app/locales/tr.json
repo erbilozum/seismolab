@@ -49,6 +49,9 @@
     }
   },
   "navbar": {
+    "api":"API",
+    "contact": "İletişim",
+    "links": "Links",
     "close": "Kapat",
     "maps": "Katmanlar"
   },

@@ -22,7 +22,8 @@ const Footer = () => {
         { id: "de", title: "Deutsch", iso: "DEU" },
     ];
 
-    const currentLanguage = mounted ? i18n.language : "tr";
+    const currentLanguage = mounted ? i18n.language : "en";
+    const { t } = useTranslation();
 
     return (
         <footer className="fixed bottom-0 w-full z-[40] select-none pointer-events-none p-4 sm:p-6">
@@ -38,7 +39,7 @@ const Footer = () => {
                         ts.junior.dev
                     </Link>
                     <span className="opacity-30">|</span>
-                    <span className="uppercase tracking-[0.1em] text-[9px] text-gray-400">Civil Engineer</span>
+                    <span className="uppercase tracking-[0.1em] text-[9px] text-gray-400">{t('footer.title')}</span>
                 </div>
 
                 {/* Sağ Kısım: Dil Seçiciler */}

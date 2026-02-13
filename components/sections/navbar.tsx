@@ -42,9 +42,9 @@ const Navbar = ({ onMapChange }: NavbarProps) => {
         { id: 5, name: "topov2", img: "/maps/map-topo-v2.jpg" },
     ];
     const navLinks = [
-        { id: 1, title: "API", url: "/api-docs" },
-        { id: 2, title: "Contact", url: "/constact" },
-        { id: 3, title: "Links", url: "/links" },
+        { id: 1, title: t('navbar.api'), url: "/api-docs" },
+        { id: 2, title: t('navbar.contact'), url: "mailto:ts.junior.dev@gmail.com" },
+        { id: 3, title: t('navbar.links'), url: "/links" },
     ];
 
     return (
@@ -67,15 +67,7 @@ const Navbar = ({ onMapChange }: NavbarProps) => {
                 {/* Orta: Linkler */}
                 <div className='flex items-center gap-6'>
                     {navLinks.map((item, idx) => (
-                        <Link
-                            title={item.title}
-                            target={"_blank"}
-                            key={idx}
-                            href={item.url}
-                            className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-blue-600 transition-colors"
-                        >
-                            {item.title}
-                        </Link>
+                        <Link title={item.title} target={"_blank"} key={idx} href={item.url} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-blue-600 transition-colors">{item.title}</Link>
                     ))}
                 </div>
 

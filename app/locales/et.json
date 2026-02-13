@@ -49,10 +49,12 @@
     }
   },
   "navbar": {
+    "api": "API",
+    "contact": "Kontakt",
+    "links": "Lingid",
     "close": "Sulge",
     "maps": "Kihid"
   },
-
   "footer": {
     "works": {
       "turkey_earthquake_map": "2023-02-06 Türgi maavärina kaart",
