@@ -13,7 +13,7 @@
     "title": "Personal Data Protection Notice",
     "description": "The security of your personal data is important to us. This web application uses only anonymized statistical cookies (for tracking the number of visits) in compliance with the Personal Data Protection Law. These cookies are used to analyze your site experience without identifying you. Permission for cookie usage is required to use the application.",
     "privacyText": "Privacy Policy",
-    "cookieTest": "Cookie Usage",
+    "cookieText": "Cookie Usage",
     "termsText": "Terms of Use",
     "acceptButton": "Accept",
     "rejectButton": "Reject"
@@ -49,6 +49,11 @@
       "description": "General topographic map for terrain and nature apps."
     }
   },
+  "navbar": {
+    "close": "Close",
+    "maps": "Layers"
+  },
+
   "footer": {
     "works": {
       "turkey_earthquake_map": "2023-02-06 Turkey Earthquake Map",

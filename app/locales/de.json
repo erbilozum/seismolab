@@ -13,7 +13,7 @@
     "title": "Hinweis zum Datenschutz",
     "description": "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Webanwendung verwendet ausschließlich  anonymisierte statistische Cookies (zur Erfassung der Anzahl der Zugriffe) in Übereinstimmung mit dem Gesetz zum Schutz personenbezogener Daten. Diese Cookies dienen der Analyse Ihres Nutzungserlebnisses, ohne Ihre Identität festzustellen. Die Zustimmung zur Verwendung von Cookies ist für die Nutzung der Anwendung erforderlich.",
     "privacyText": "Datenschutzerklärung",
-    "cookieTest": "Cookie-Nutzung",
+    "cookieText": "Cookie-Nutzung",
     "termsText": "Nutzungsbedingungen",
     "acceptButton": "Akzeptieren",
     "rejectButton": "Ablehnen"
@@ -48,6 +48,11 @@
       "description": "Allgemeine topografische Karte für Gelände- und Natur-Apps."
     }
   },
+  "navbar": {
+    "close": "Schließen",
+    "maps": "Ebenen"
+  },
+
   "footer": {
     "works": {
       "turkey_earthquake_map": "Erdbebenkarte Türkei 06.02.2023",

@@ -11,20 +11,8 @@ const Footer = () => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        let frameId: number;
-
-        if (!mounted) {
-            // State güncellemesini bir sonraki frame'e erteleyerek
-            // linter uyarısını ve cascading render hatasını aşıyoruz.
-            frameId = requestAnimationFrame(() => {
-                setMounted(true);
-            });
-        }
-
-        return () => {
-            if (frameId) cancelAnimationFrame(frameId);
-        };
-    }, [mounted]);
+        setMounted(true);
+    }, []);
 
     const languageOptions = [
         { id: "tr", title: "Türkçe", iso: "TUR" },
@@ -34,18 +22,27 @@ const Footer = () => {
         { id: "de", title: "Deutsch", iso: "DEU" },
     ];
 
-    // Hydration hatasını engellemek için dil kontrolü yapılan
-    // yerlerde "mounted" kontrolünü güvenle kullanabilirsin.
     const currentLanguage = mounted ? i18n.language : "tr";
 
     return (
-        <footer className="fixed bottom-0 w-full z-40 select-none pointer-events-none">
-            <div className="flex justify-between items-center bg-white/10 backdrop-blur-md px-6 py-2 pointer-events-auto border-t border-white/10">
-                <div className="flex flex-row text-[10px] sm:text-[11px] text-gray-600 font-medium tracking-wide">
-                 <Link className={'w-40 flex tracking-[5] hover:font-semibold transition-all ease-in-out'} href={'mailto:ts.junior.dev@gmail.com'} title={'E-Mail'}> ts.junior.dev</Link>  <span className="mx-1">|</span> Civil Engineer
+        <footer className="fixed bottom-0 w-full z-[40] select-none pointer-events-none p-4 sm:p-6">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center bg-white/70 backdrop-blur-xl px-6 py-3 pointer-events-auto border border-white/40 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] rounded-[2rem]">
+
+                {/* Sol Kısım: Kimlik Bilgisi */}
+                <div className="flex items-center gap-2 text-[10px] sm:text-[11px] text-gray-500 font-medium tracking-tight mb-3 sm:mb-0">
+                    <Link
+                        className="text-gray-900 font-bold hover:text-blue-600 transition-colors tracking-normal"
+                        href="mailto:ts.junior.dev@gmail.com"
+                        title="E-Mail"
+                    >
+                        ts.junior.dev
+                    </Link>
+                    <span className="opacity-30">|</span>
+                    <span className="uppercase tracking-[0.1em] text-[9px] text-gray-400">Civil Engineer</span>
                 </div>
 
-                <div className="flex items-center gap-3 sm:gap-4">
+                {/* Sağ Kısım: Dil Seçiciler */}
+                <div className="flex items-center gap-4">
                     {languageOptions.map((lang) => {
                         const isActive = currentLanguage === lang.id;
 
@@ -54,12 +51,12 @@ const Footer = () => {
                                 key={lang.id}
                                 onClick={() => i18n.changeLanguage(lang.id)}
                                 title={lang.title}
-                                className="relative w-6 h-4 sm:w-7 sm:h-5 rounded overflow-hidden transition-transform hover:scale-110 focus:outline-none"
+                                className="group relative flex flex-col items-center focus:outline-none"
                             >
-                                <div className={`w-full h-full rounded overflow-hidden shadow-sm transition-all duration-300
+                                <div className={`relative w-6 h-4 sm:w-7 sm:h-5 rounded-[4px] overflow-hidden transition-all duration-300 shadow-sm 
                                     ${isActive
-                                    ? "ring-1 ring-white/70 scale-105"
-                                    : "opacity-40 hover:opacity-100"
+                                    ? "scale-110 ring-2 ring-blue-500 ring-offset-2 ring-offset-white"
+                                    : "opacity-40 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 hover:scale-105"
                                 }`}
                                 >
                                     <Image
@@ -71,6 +68,10 @@ const Footer = () => {
                                         unoptimized
                                     />
                                 </div>
+                                {/* Aktif Dil Alt Çizgi Sinyali */}
+                                {isActive && (
+                                    <span className="absolute -bottom-1.5 w-1 h-1 bg-blue-500 rounded-full" />
+                                )}
                             </button>
                         );
                     })}
