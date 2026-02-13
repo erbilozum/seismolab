@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 
 // SEO ve Sosyal Medya İçin Metadata
 export const metadata: Metadata = {
-    title: "Türkiye earthquake Damage Stats | Interactive Visualization",
+    title: "Türkiye earthquake Damage Stats | Interactive Visualization | 06.02.2023 Maras Earthquake",
     verification: {
         google: "I-l-DgFICLt9uB2dN6lyPqq4xaksDxQnXHeVld4FqYE",
     },
@@ -22,15 +22,13 @@ export const metadata: Metadata = {
     authors: [{ name: "ts.junior" }],
     robots: "index, follow",
     openGraph: {
-        title: "Türkiye Earthquake Damage Stats",
+        title: "06.02.2023 Türkiye Earthquake Damage Stats",
         description: "Interactive visualization of seismic damage data.",
         url: "https://seismolab.vercel.app/",
         siteName: "EarthquakeStats",
         images: [
             {
-                url: "/og-image.jpg", // public klasörüne bir paylaşım görseli ekle
-                width: 1200,
-                height: 630,
+                url: "/og-image.jpg",
             },
         ],
         locale: "en_US",
@@ -59,7 +57,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
-            <title>Türkiye earthquake Damage Stats | Interactive Visualization</title>
+            <title>Türkiye earthquake Damage Stats | Interactive Visualization | 06.02.2023 Maras Earthquake</title>
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
