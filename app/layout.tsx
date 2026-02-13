@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import I18nProvider from "@/components/I18nProvider";
-import {appData} from "@/data/mainData";
 import {GoogleTagManager} from '@next/third-parties/google';
 
 const montserrat = Montserrat({
@@ -14,6 +13,9 @@ const montserrat = Montserrat({
 // SEO ve Sosyal Medya İçin Metadata
 export const metadata: Metadata = {
     title: "Türkiye earthquake Damage Stats | Interactive Visualization",
+    verification: {
+        google: "I-l-DgFICLt9uB2dN6lyPqq4xaksDxQnXHeVld4FqYE",
+    },
     description: "Interactive visualization and statistical analysis of earthquake damage in Turkey. Data-driven insights into structural impacts and supervised building reports.",
     keywords: ["Turkey Earthquake", "Earthquake Stats", "Seismic Data Visualization", "Building Damage Reports", "Interactive Map"],
     authors: [{ name: "ts.junior" }],
@@ -57,22 +59,22 @@ export default function RootLayout({
         <html lang="en">
         <head>
             <title>Türkiye earthquake Damage Stats | Interactive Visualization</title>
-            <GoogleTagManager gtmId={"GTM-NFMXQTFH"}/>
+            <GoogleTagManager gtmId="GTM-NFMXQTFH" />
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('consent', 'default', {
-                    'ad_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied',
-                    'analytics_storage': 'granted'
-               });`,}}/>
-
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('consent', 'default', {
+                        'ad_storage': 'granted',
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted',
+                        'analytics_storage': 'granted'
+                    });`,
+                }}
+            />
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
-        <meta name="google-site-verification" content="I-l-DgFICLt9uB2dN6lyPqq4xaksDxQnXHeVld4FqYE" />
         <I18nProvider>
             {children}
         </I18nProvider>
