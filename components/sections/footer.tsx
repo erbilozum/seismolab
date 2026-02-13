@@ -10,8 +10,20 @@ const Footer = () => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
-    }, []);
+        let frameId: number;
+
+        if (!mounted) {
+            // State güncellemesini bir sonraki frame'e erteleyerek
+            // linter uyarısını ve cascading render hatasını aşıyoruz.
+            frameId = requestAnimationFrame(() => {
+                setMounted(true);
+            });
+        }
+
+        return () => {
+            if (frameId) cancelAnimationFrame(frameId);
+        };
+    }, [mounted]);
 
     const languageOptions = [
         { id: "tr", title: "Türkçe", iso: "TUR" },
@@ -21,18 +33,20 @@ const Footer = () => {
         { id: "de", title: "Deutsch", iso: "DEU" },
     ];
 
+    // Hydration hatasını engellemek için dil kontrolü yapılan
+    // yerlerde "mounted" kontrolünü güvenle kullanabilirsin.
+    const currentLanguage = mounted ? i18n.language : "tr";
+
     return (
         <footer className="fixed bottom-0 w-full z-40 select-none pointer-events-none">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md px-6 py-2 pointer-events-auto border-t border-white/10">
-                {/* Minimal künye */}
                 <div className="text-[10px] sm:text-[11px] text-gray-200 font-medium tracking-wide">
                     Erbil ÖZÜM <span className="mx-1">|</span> Civil Engineer
                 </div>
 
-                {/* Minimal dil seçimi */}
                 <div className="flex items-center gap-3 sm:gap-4">
                     {languageOptions.map((lang) => {
-                        const isActive = mounted && i18n.language === lang.id;
+                        const isActive = currentLanguage === lang.id;
 
                         return (
                             <button
@@ -43,15 +57,15 @@ const Footer = () => {
                             >
                                 <div className={`w-full h-full rounded overflow-hidden shadow-sm transition-all duration-300
                                     ${isActive
-                                    ? "ring-1 ring-white/70"
-                                    : "opacity-50 hover:opacity-100"
+                                    ? "ring-1 ring-white/70 scale-105"
+                                    : "opacity-40 hover:opacity-100"
                                 }`}
                                 >
                                     <Image
                                         src={findFlagUrlByIso3Code(lang.iso)}
                                         alt={lang.title}
                                         fill
-                                        sizes="(max-width: 640px) 24px, 28px"
+                                        sizes="28px"
                                         className="object-cover"
                                         unoptimized
                                     />

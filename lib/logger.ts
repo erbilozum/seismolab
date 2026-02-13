@@ -4,15 +4,23 @@ const isDev = process.env.NODE_ENV !== "production";
 
 const logger = pino({
     level: isDev ? "debug" : "info",
-    // Tarayıcı ayarları
+    // Tarayıcı (Client Side) ayarları
     browser: {
         asObject: true,
-        // İstemci tarafında pino-pretty yerine standart konsolu kullanması için
-        write: (o) => {
+        // o: log objesi, level: log seviyesi (opsiyonel)
+        write: (o: any) => {
             if (isDev) {
                 // Geliştirme modunda konsola güzelce yazdır
                 const time = new Date().toLocaleTimeString();
-                console.log(`[${time}] ${level}:`, o.msg || "", o.err || "", o.ip || "");
+                // o.level sayısal değerdir (30: info, 20: debug vb.)
+                const label = o.level <= 20 ? "DEBUG" : "INFO";
+
+                console.log(
+                    `[${time}] ${label}:`,
+                    o.msg || "",
+                    o.err || "",
+                    o.ip || ""
+                );
             }
         }
     },

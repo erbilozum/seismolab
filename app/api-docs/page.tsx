@@ -2,7 +2,8 @@ import { getApiDocs } from '@/lib/swagger';
 import SwaggerComponent from "@/components/ui/SwaggerComponent";
 
 export default async function IndexPage() {
-    const spec = await getApiDocs();
+    // spec verisini alırken Record tipinde olduğunu belirtiyoruz
+    const spec = await getApiDocs() as Record<string, unknown>;
 
     return (
         <div className="min-h-screen pb-20 ">
@@ -21,7 +22,7 @@ export default async function IndexPage() {
                     </div>
                 </div>
 
-                {/* Sunucudan gelen spec verisini Client Component'e paslıyoruz */}
+                {/* Artık TypeScript 'spec' içeriğinin ne olduğunu biliyor */}
                 <SwaggerComponent spec={spec} />
             </div>
         </div>

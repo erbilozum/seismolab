@@ -2,10 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import L from "leaflet";
 import axios from "axios";
 import "leaflet/dist/leaflet.css";
 import ToolTipCard from "@/components/card/toolTipCard";
+
+// Leaflet'i yukarıda direkt import etmiyoruz!
 
 const MapContainer = dynamic(() => import("react-leaflet").then(m => m.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import("react-leaflet").then(m => m.TileLayer), { ssr: false });
@@ -60,19 +61,17 @@ interface MapsProps {
 }
 
 const Maps = ({ selectedMapId }: MapsProps) => {
-    const [leafletReady, setLeafletReady] = useState(false);
+    const [L, setL] = useState<any>(null); // Leaflet instance'ı için state
     const [cities, setCities] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            setLeafletReady(true);
-        }
+        // Leaflet'i sadece istemci tarafında yüklüyoruz
+        const loadLeaflet = async () => {
+            const leaflet = await import("leaflet");
+            setL(leaflet.default);
 
-        const fetchCityData = async () => {
             try {
-                setIsLoading(true);
-                // Axios ile veriyi çekiyoruz
                 const response = await axios.get("/api/earthquake");
                 setCities(response.data);
             } catch (error) {
@@ -82,10 +81,11 @@ const Maps = ({ selectedMapId }: MapsProps) => {
             }
         };
 
-        fetchCityData();
+        loadLeaflet();
     }, []);
 
-    if (!leafletReady || isLoading) {
+    // Hem Leaflet'in hem de verinin hazır olduğundan emin oluyoruz
+    if (!L || isLoading) {
         return (
             <div className="h-full w-full bg-black flex items-center justify-center">
                 <div className="animate-pulse text-red-500 font-mono text-xs uppercase tracking-widest">
@@ -96,12 +96,7 @@ const Maps = ({ selectedMapId }: MapsProps) => {
     }
 
     const activeLayer = MAP_LAYERS.find(m => m.id === selectedMapId) || MAP_LAYERS[0];
-
-    // Dinamik maxCollapsed hesabı
-    const maxCollapsed = cities.length > 0
-        ? Math.max(...cities.map(c => c.totalCollapsed))
-        : 1;
-
+    const maxCollapsed = cities.length > 0 ? Math.max(...cities.map(c => c.totalCollapsed)) : 1;
     const scaleFactor = 45 / Math.sqrt(maxCollapsed);
 
     return (
@@ -126,6 +121,7 @@ const Maps = ({ selectedMapId }: MapsProps) => {
                         </div>
                     `;
 
+                    // L artık state'den geliyor, hata vermez
                     const customIcon = L.divIcon({
                         className: "custom-leaflet-icon",
                         html: iconHtml,
