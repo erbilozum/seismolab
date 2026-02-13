@@ -12,7 +12,7 @@ const SwaggerUI = dynamic(() => import("swagger-ui-react"), {
     ssr: false,
     loading: () => (
         <div className="flex items-center justify-center p-10">
-            <p className="animate-pulse font-medium">Swagger yükleniyor...</p>
+            <p className="animate-pulse font-medium">Swagger Loading...</p>
         </div>
     ),
 });

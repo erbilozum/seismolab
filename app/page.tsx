@@ -79,8 +79,17 @@ export default function HomePage() {
     }, [t]); // Dil değişirse popup içeriği de güncellenir
     useEffect(() => {
         if (typeof window !== "undefined") {
-            //   disableDevtool();
+            disableDevtool();
         }
+    }, []);
+    useEffect(() => {
+        const disableContextMenu = (e: MouseEvent) => {
+            e.preventDefault();
+        };
+        document.addEventListener("contextmenu", disableContextMenu);
+        return () => {
+            document.removeEventListener("contextmenu", disableContextMenu);
+        };
     }, []);
     return (
         <div className="relative h-screen w-full overflow-hidden">

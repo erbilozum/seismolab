@@ -31,28 +31,14 @@
 
 import { NextResponse } from 'next/server';
 import { CITY_DATA } from '@/data/earthquake';
-import logger from "@/lib/logger"; // Logger'ı içe aktar
-
-
+import logger from "@/lib/logger";
 export async function GET(request: Request) {
-    // İsteğin geldiği IP'yi veya diğer detayları loglamak istersen:
     const { method, url } = request;
-
     try {
-        // Başarılı istek günlüğü
         logger.info({ msg: "Seismic data fetched successfully", method, url });
-
         return NextResponse.json(CITY_DATA);
-    } catch (error: any) {
-        // Hata loglama: Hatayı tüm detayıyla (err) ve mesajıyla kaydeder
-        logger.error({
-            msg: "Failed to load earthquake data",
-            err: error.message,
-            method,
-            url
-        });
-
-        // Kullanıcıya teknik detayı sızdırmadan temiz bir hata dönüyoruz
+    } catch (error) {
+        logger.error({error},"Failed to load earthquake data")
         return NextResponse.json(
             {
                 success: false,
