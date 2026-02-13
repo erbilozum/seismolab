@@ -70,6 +70,7 @@ export default function RootLayout({
             <GoogleTagManager gtmId={"GTM-NFMXQTFH"}/>
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
+        <meta name="google-site-verification" content="I-l-DgFICLt9uB2dN6lyPqq4xaksDxQnXHeVld4FqYE" />
         <I18nProvider>
             {children}
         </I18nProvider>
