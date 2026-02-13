@@ -4,6 +4,7 @@ import "./globals.css";
 import I18nProvider from "@/components/I18nProvider";
 import {appData} from "@/data/mainData";
 import {GoogleTagManager} from '@next/third-parties/google';
+import Script from "next/script";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -14,9 +15,6 @@ const montserrat = Montserrat({
 // SEO ve Sosyal Medya İçin Metadata
 export const metadata: Metadata = {
     title: "Türkiye earthquake Damage Stats | Interactive Visualization",
-    verification: {
-        google: "xa_Ne7G7u8U4BjQZXk0qfoDeImFHwTd5cPwK4x",
-    },
     description: "Interactive visualization and statistical analysis of earthquake damage in Turkey. Data-driven insights into structural impacts and supervised building reports.",
     keywords: ["Turkey Earthquake", "Earthquake Stats", "Seismic Data Visualization", "Building Damage Reports", "Interactive Map"],
     authors: [{ name: "ts.junior" }],
@@ -59,18 +57,25 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
-            <script
+            {/* 1. Önce rıza (consent) ayarlarını yükle (GTM'den hemen önce çalışmalı) */}
+            <Script
+                id="gtm-consent"
+                strategy="beforeInteractive" // GTM yüklenmeden önce çalışmasını sağlar
                 dangerouslySetInnerHTML={{
                     __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('consent', 'default', {
-                    'ad_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied',
-                    'analytics_storage': 'granted'
-               });`,}}/>
-            <GoogleTagManager gtmId={"GTM-NFMXQTFH"}/>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'granted'
+        });`,
+                }}
+            />
+
+            {/* 2. Sonra GTM bileşenini ekle */}
+            <GoogleTagManager gtmId="GTM-NFMXQTFH" />
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
         <I18nProvider>
