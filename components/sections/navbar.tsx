@@ -42,9 +42,9 @@ const Navbar = ({ onMapChange }: NavbarProps) => {
         { id: 5, name: "topov2", img: "/maps/map-topo-v2.jpg" },
     ];
     const navLinks = [
-        { id: 1, title: "Link 1", url: "#" },
-        { id: 2, title: "Link 2", url: "#" },
-        { id: 3, title: "Link 3", url: "#" },
+        { id: 1, title: "API", url: "/api-docs" },
+        { id: 2, title: "Contact", url: "/constact" },
+        { id: 3, title: "Links", url: "/links" },
     ];
 
     return (
