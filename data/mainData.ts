@@ -1,3 +1,3 @@
 export const appData = {
-    googleTagId:"NFMXQTFH"
+    googleTagId:"GTM-NFMXQTFH"
 }
