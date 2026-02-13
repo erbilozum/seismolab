@@ -8,13 +8,13 @@ import { useTranslation } from 'react-i18next';
 import { FaRibbon } from "react-icons/fa";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer"; // Eski kodundaki ikon
+import disableDevtool from "disable-devtool";
 
 const MySwal = withReactContent(Swal);
 
 export default function HomePage() {
     const [currentMapId, setCurrentMapId] = useState(1);
     const { t } = useTranslation();
-
     useEffect(() => {
         // Eski kodundaki açılış mesajının Next.js uyumlu hali
         MySwal.fire({
@@ -76,7 +76,11 @@ export default function HomePage() {
             }
         });
     }, [t]); // Dil değişirse popup içeriği de güncellenir
-
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            //   disableDevtool();
+        }
+    }, []);
     return (
         <div className="relative h-screen w-full overflow-hidden bg-black">
             {/* Harita Katmanı */}

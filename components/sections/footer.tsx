@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { findFlagUrlByIso3Code } from "country-flags-svg";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
     const { i18n } = useTranslation();
@@ -40,8 +41,8 @@ const Footer = () => {
     return (
         <footer className="fixed bottom-0 w-full z-40 select-none pointer-events-none">
             <div className="flex justify-between items-center bg-white/10 backdrop-blur-md px-6 py-2 pointer-events-auto border-t border-white/10">
-                <div className="text-[10px] sm:text-[11px] text-gray-200 font-medium tracking-wide">
-                    Erbil ÖZÜM <span className="mx-1">|</span> Civil Engineer
+                <div className="flex flex-row text-[10px] sm:text-[11px] text-gray-600 font-medium tracking-wide">
+                 <Link className={'w-40 flex tracking-[5] hover:font-semibold transition-all ease-in-out'} href={'mailto:ts.junior.dev@gmail.com'} title={'E-Mail'}> ts.junior.dev</Link>  <span className="mx-1">|</span> Civil Engineer
                 </div>
 
                 <div className="flex items-center gap-3 sm:gap-4">

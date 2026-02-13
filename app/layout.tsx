@@ -13,7 +13,10 @@ const montserrat = Montserrat({
 
 // SEO ve Sosyal Medya İçin Metadata
 export const metadata: Metadata = {
-    title: "Türkiye Earthquake Damage Stats | Interactive Visualization",
+    title: "Türkiye earthquake Damage Stats | Interactive Visualization",
+    verification: {
+        google: "xa_Ne7G7u8U4BjQZXk0qfoDeImFHwTd5cPwK4x",
+    },
     description: "Interactive visualization and statistical analysis of earthquake damage in Turkey. Data-driven insights into structural impacts and supervised building reports.",
     keywords: ["Turkey Earthquake", "Earthquake Stats", "Seismic Data Visualization", "Building Damage Reports", "Interactive Map"],
     authors: [{ name: "ts.junior" }],

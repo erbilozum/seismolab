@@ -1,0 +1,48 @@
+h1{
+    margin-top: 1.5rem;
+    font-weight: 700;          /* font-bold */
+    letter-spacing: 0.05em;    /* tracking-wider */
+    margin-bottom: 1.5rem;     /* mb-2 */
+    text-transform: uppercase;
+}
+h2 {
+    margin-top: 1.5rem;
+    font-weight: 700;          /* font-bold */
+    letter-spacing: 0.05em;    /* tracking-wider */
+    margin-bottom: 1.5rem;     /* mb-2 */
+}
+h3 {
+    margin-top: 1.2rem;
+    font-weight: 600;          /* font-bold */
+    letter-spacing: 0.05em;    /* tracking-wider */
+    margin-bottom: 0.5rem;     /* mb-2 */
+    text-transform: uppercase;
+
+}
+p {
+    line-height: 2.325;        /* leading-relaxed */
+    margin-top: 0.5rem;        /* mt-2 */
+    text-align: justify;       /* text-justify */
+}
+ul {
+    list-style-type: decimal;
+    list-style-position: inside; /* çok önemli */
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    list-style-type: disc;         /* nokta */
+    list-style-position: outside;
+}
+ol {
+    list-style-type: decimal;
+    list-style-position: inside; /* çok önemli */
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    list-style-type: disc;         /* nokta */
+    list-style-position: outside;
+}
+
+li {
+    display: list-item;          /* Tailwind reset’i override eder */
+    margin-top: 1rem;
+    line-height: 1.625;
+}
