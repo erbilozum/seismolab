@@ -67,7 +67,7 @@ export default function RootLayout({
                     'ad_personalization': 'denied',
                     'analytics_storage': 'granted'
                });`,}}/>
-            <GoogleTagManager gtmId={appData.googleTagId}/>
+            <GoogleTagManager gtmId={"GTM-NFMXQTFH"}/>
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
         <I18nProvider>
