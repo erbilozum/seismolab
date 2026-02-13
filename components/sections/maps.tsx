@@ -49,7 +49,7 @@ const PulsingIconStyles = `
   }
 `;
 
-const MAP_TILER_KEY = process.env.NEXT_PUBLIC_MAP_TILER_KEY;
+const MAP_TILER_KEY = "xLALvQPSK3xaCZV7bwFZ";
 const MAP_LAYERS = [
     { id: 1, url: `https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}@2x.png?key=${MAP_TILER_KEY}` },
     { id: 2, url: `https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}@2x.png?key=${MAP_TILER_KEY}` },
