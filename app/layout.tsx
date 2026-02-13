@@ -56,6 +56,8 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
+            <title>Türkiye earthquake Damage Stats | Interactive Visualization</title>
+            <GoogleTagManager gtmId={"GTM-NFMXQTFH"}/>
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
@@ -67,7 +69,7 @@ export default function RootLayout({
                     'ad_personalization': 'denied',
                     'analytics_storage': 'granted'
                });`,}}/>
-            <GoogleTagManager gtmId={"GTM-NFMXQTFH"}/>
+
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
         <meta name="google-site-verification" content="I-l-DgFICLt9uB2dN6lyPqq4xaksDxQnXHeVld4FqYE" />
