@@ -1,0 +1,66 @@
+{
+  "title": "Erdbebenschaden-Karte Türkei",
+  "popup": {
+    "title": "Wichtige Informationen",
+    "content": "Gebäude, die beim zweiten Erdbeben eingestürzt sind, von der sogenannten Zonen-Amnestie (Zonenfrieden) profitiert haben oder durch das Entfernen von Säulen oder tragenden Wänden eingestürzt sind, fallen nicht in den Verantwortungsbereich der Bauprüforganisationen. Die Tabelle wird aktualisiert, sobald diese Gebäude identifiziert sind.",
+    "linkTitle": "Datenquelle für eingestürzte Gebäude",
+    "linkText": "https://www.iletisim.gov.tr/images/uploads/dosyalar/15-16-subat-bulten.pdf",
+    "linkSubTitle": "Ursachen für Todesfälle und Verletzungen",
+    "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
+    "buttonText": "Okay"
+  },
+  "marker": {
+    "year": "Inkrafttreten der Bauprüfung",
+    "totalCollapsed": "Gesamtzahl der zerstörten Gebäude",
+    "totalCollapsedSupervised": "Anzahl der eingestürzten Gebäude mit Bauaufsicht",
+    "totalCollapsedUnsupervised": "Anzahl der eingestürzten und unkontrollierten Gebäude",
+    "deaths": "Todesfälle",
+    "injured": "Verletzte"
+  },
+  "maps": {
+    "dataviz": {
+      "name": "Dataviz-Karte",
+      "description": "Einfache Hintergrundkarte für die Datenvisualisierung."
+    },
+    "basic": {
+      "name": "Basis-Karte",
+      "description": "Helle und informative Karte für den allgemeinen Gebrauch."
+    },
+    "hillshade": {
+      "name": "Schattierungskarte",
+      "description": "Globale Rasterkacheln mit transparentem Relief."
+    },
+    "hybrid": {
+      "name": "Hybrid-Karte",
+      "description": "Nahtlose Satelliten- und Luftbilder der Welt mit Kontext."
+    },
+    "topov2": {
+      "name": "Topo v2 Karte",
+      "description": "Allgemeine topografische Karte für Gelände- und Natur-Apps."
+    }
+  },
+  "footer": {
+    "works": {
+      "turkey_earthquake_map": "Erdbebenkarte Türkei 06.02.2023",
+      "corporated_phonebook": "Firmen-Telefonbuch",
+      "accident_control_system": "Unfallkontrollsystem",
+      "work_permit_document_template": "Vorlage für Arbeitserlaubnisdokumente"
+    },
+    "about": "Er arbeitet als Prüfingenieur für Baustatik in der Direktion für Rekonstruktion und Urbanisierung der Gemeinde Marmaraereğlisi. Ich arbeite im Bereich Softwareentwicklung.",
+    "title": "M. Sc. Bauingenieur",
+    "user": "Erbil ÖZÜM",
+    "address": "Cedid Ali Paşa Mah. Perinthos Cad. No.51 Marmaraereğlisi/Tekirdağ",
+    "email": "info@erbilozum.com",
+    "phone": "0 850 440 0951",
+    "headers": {
+      "about": "Über mich",
+      "contact": "Kontakt",
+      "works": "Projekte",
+      "social": "Soziale Medien"
+    }
+  },
+  "connectionStatus": {
+    "online": "Ihre Internetverbindung funktioniert ordnungsgemäß.",
+    "offline": "Verbindung verloren. Bitte überprüfen Sie Ihre Internetverbindung!"
+  }
+}

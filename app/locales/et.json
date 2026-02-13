@@ -1,0 +1,66 @@
+{
+  "title": "Türgi maavärina kahjustuste kaart",
+  "popup": {
+    "title": "Oluline teave",
+    "content": "Hooneinspektsiooni organisatsioonid ei vastuta hoone eest, mis varisesid kokku teises maavärinas, kasutasid tsoonirahu (zoning peace) võimalust või varisesid kokku tugipostide lõikamise või seinte muutmise tõttu. Tabelit uuendatakse vastavalt nende hoonete tuvastamisele.",
+    "linkTitle": "Kokkuvarisenud hoonete andmete allikas",
+    "linkText": "https://www.iletisim.gov.tr/images/uploads/dosyalar/15-16-subat-bulten.pdf",
+    "linkSubTitle": "Surmajuhtumite ja vigastuste allikas",
+    "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
+    "buttonText": "Hästi"
+  },
+  "marker": {
+    "year": "Ehituskontrolli jõustumise kuupäev",
+    "totalCollapsed": "Hävinud hoonete koguarv",
+    "totalCollapsedSupervised": "Järelevalvega lammutatud hoonete arv",
+    "totalCollapsedUnsupervised": "Lammutatud ja kontrollimata hoonete arv",
+    "deaths": "Surnud",
+    "injured": "Vigastatud"
+  },
+  "maps": {
+    "dataviz": {
+      "name": "Dataviz kaart",
+      "description": "Lihtne taustakaart andmete visualiseerimiseks."
+    },
+    "basic": {
+      "name": "Põhikaart",
+      "description": "Kerge ja informatiivne kaart üldiseks kasutamiseks."
+    },
+    "hillshade": {
+      "name": "Reljeefkaart",
+      "description": "Globaalsed rasterplaadid läbipaistva varjutatud reljeefiga."
+    },
+    "hybrid": {
+      "name": "Hübriidkaart",
+      "description": "Sujuv satelliit- ja aerofotode maailm koos kontekstiga."
+    },
+    "topov2": {
+      "name": "Topo v2 kaart",
+      "description": "Üldine topograafiline kaart maastiku- ja loodusrakenduste jaoks."
+    }
+  },
+  "footer": {
+    "works": {
+      "turkey_earthquake_map": "2023-02-06 Türgi maavärina kaart",
+      "corporated_phonebook": "Ettevõtte telefoniraamat",
+      "accident_control_system": "Õnnetuste kontrolli süsteem",
+      "work_permit_document_template": "Tööloa dokumendi mall"
+    },
+    "about": "Ta töötab staatiliste projektide kontrolörina Marmaraereğlisi valla rekonstrueerimise ja linnastumise direktoraadis. Tegelen tarkvaraarendusega.",
+    "title": "M. Sc. Ehitusinsener",
+    "user": "Erbil ÖZÜM",
+    "address": "Cedid Ali Paşa Mah. Perinthos Cad. No.51 Marmaraereğlisi/Tekirdağ",
+    "email": "info@erbilozum.com",
+    "phone": "0 850 440 0951",
+    "headers": {
+      "about": "Meist",
+      "contact": "Kontakt",
+      "works": "Tööd",
+      "social": "Sotsiaalmeedia"
+    }
+  },
+  "connectionStatus": {
+    "online": "Teie internetiühendus toimib korralikult.",
+    "offline": "Ühendus on katkenud. Palun kontrollige oma internetiühendust!"
+  }
+}

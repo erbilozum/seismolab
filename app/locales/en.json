@@ -1,0 +1,66 @@
+{
+  "title": "Turkey Earthquake Damage Map",
+  "popup": {
+    "title": "Important Information",
+    "content": "Buildings that collapsed in the second earthquake, benefited from zoning peace, collapsed by cutting columns or changing walls are not under the responsibility of building inspection organizations. The table will be updated when these buildings are identified.",
+    "linkTitle": "Count of Collapsed Building Data Source",
+    "linkText": "https://www.iletisim.gov.tr/images/uploads/dosyalar/15-16-subat-bulten.pdf",
+    "linkSubTitle": "Source of Fatalities and Injuries",
+    "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
+    "buttonText": "Okay"
+  },
+  "marker": {
+    "year": "Building Inspection Effective Date",
+    "totalCollapsed": "Total Number of Buildings Destroyed",
+    "totalCollapsedSupervised": "Number of Demolished Buildings with Structural Inspection",
+    "totalCollapsedUnsupervised": "Number of Demolished Buildings and Uncontrolled Buildings",
+    "deaths": "Death",
+    "injured": "Injured"
+  },
+  "maps": {
+    "dataviz": {
+      "name": "Dataviz Map",
+      "description": "Simple background map for data visualization."
+    },
+    "basic": {
+      "name": "Basic Map",
+      "description": "Light and informative map for general use."
+    },
+    "hillshade": {
+      "name": "Hillshade Map",
+      "description": "Global raster tiles with transparent shaded relief."
+    },
+    "hybrid": {
+      "name": "Hybrid Map",
+      "description": "Seamless satellite and aerial imagery of the world with context."
+    },
+    "topov2": {
+      "name": "Topo v2 Map",
+      "description": "General topographic map for terrain and nature apps."
+    }
+  },
+  "footer": {
+    "works": {
+      "turkey_earthquake_map": "2023-02-06 Turkey Earthquake Map",
+      "corporated_phonebook": "Corporated Phonebook",
+      "accident_control_system": "Accident Control System",
+      "work_permit_document_template": "Work Permit Document Template"
+    },
+    "about": "He works as a static project controller in Marmaraereğlisi Municipality Directorate of Reconstruction and Urbanization. I am working on software.",
+    "title": "M. Sc. Civil Engineer",
+    "user": "Erbil ÖZÜM",
+    "address": "Cedid Ali Paşa Mah. Perinthos Cad. No.51 Marmaraereğlisi/Tekirdağ",
+    "email": "info@erbilozum.com",
+    "phone": "0 850 440 0951",
+    "headers": {
+      "about": "About",
+      "contact": "Contact",
+      "works": "Works",
+      "social": "Social Media"
+    }
+  },
+  "connectionStatus": {
+    "online": "Your internet connection working properly.",
+    "offline": "Connection lost. Please check your internet connection!"
+  }
+}

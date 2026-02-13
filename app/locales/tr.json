@@ -1,0 +1,66 @@
+{
+  "title": "Türkiye Depremi Hasar Haritası",
+  "popup": {
+    "title": "Önemli Bilgilendirme",
+    "content": "İkinci depremde yıkılan, imar barışından yararlanılan, kolon kesilerek ya da duvarları değiştirilerek yıkılan binalar yapı denetim kuruluşlarının sorumluluğunda değildir. Bu binalar belirlendiğinde tablo güncellenecektir.",
+    "linkTitle": "Yıkılan Bina Sayısı Kaynağı",
+    "linkText": "https://www.iletisim.gov.tr/images/uploads/dosyalar/15-16-subat-bulten.pdf",
+    "linkSubTitle": "Can Kaybı ve Yaralanma Sayısı Kaynağı",
+    "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
+    "buttonText": "Tamam"
+  },
+  "marker": {
+    "year": "Yapı Denetim Yürürlülük Tarihi",
+    "totalCollapsed": "Yıkılan Toplam Bina Sayısı",
+    "totalCollapsedSupervised": "Yıkılan Yapı Denetimli Bina Sayısı",
+    "totalCollapsedUnsupervised": "Yıkılan Yapı Denetimsiz Bina Sayısı",
+    "deaths": "Can Kaybı",
+    "injured": "Yaralanma"
+  },
+  "maps": {
+    "dataviz": {
+      "name": "Dataviz Map",
+      "description": "Veri görselleştirme için basit harita."
+    },
+    "basic": {
+      "name": "Basic Map",
+      "description": "Mükemmel hafif ve bilgilendirici temel harita."
+    },
+    "hillshade": {
+      "name": "Hillshade Map",
+      "description": "Şeffaf gölgeli kabartmalı küresel raster haritası."
+    },
+    "hybrid": {
+      "name": "Hybrid Map",
+      "description": "Bağlamla birlikte tüm dünya için güncel, kesintisiz görüntü haritası."
+    },
+    "topov2": {
+      "name": "Topo v2 Map",
+      "description": "Konturlar ve gölgeli kabartma ile mükemmel arazi altlık harita."
+    }
+  },
+  "footer": {
+    "works": {
+      "turkey_earthquake_map": "Türkiye Depremi Hasar Haritası",
+      "corporated_phonebook": "Kurumsal Telefon Rehberi",
+      "accident_control_system": "Ramak Kala Takip Sistemi",
+      "work_permit_document_template": "Saha Giriş Evrak Şablon Sistemi"
+    },
+    "about": "Marmaraereğlisi Belediyesi İmar ve Şehircilik Müdürlüğü'nde statik proje kontrollörü olarak görev yapmakta olup yazılım konusunda çalışmalar yürütmekteyim.",
+    "title": "İnş. Yük. Müh.",
+    "user": "Erbil ÖZÜM",
+    "address": "Cedid Ali Paşa Mah. Perinthos Cad. No.51 Marmaraereğlisi/Tekirdağ",
+    "email": "info@erbilozum.com",
+    "phone": "0 850 440 0951",
+    "headers": {
+      "about": "Hakkımda",
+      "contact": "İletişim",
+      "works": "Projeler",
+      "social": "Sosyal Medya"
+    }
+  },
+  "connectionStatus": {
+    "online": "İnternet bağlantınız çalışmaktadır.",
+    "offline": "Bağlantı yok. Lütfen internet bağlantınızı kontrol edin!"
+  }
+}

@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+:root {
+
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
   }
 }
 
+/* Temel Sıfırlamalar */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Leaflet Popup & Tooltip Reset --- */
+
+/* 1. Leaflet'in varsayılan beyaz balon kutusunu tamamen şeffaf yap */
+.minimal-popup .leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* 2. İçerik alanındaki zorunlu boşlukları sıfırla */
+.minimal-popup .leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+  line-height: inherit !important;
+}
+
+/* 3. Alttaki üçgen oku (tip) gizle */
+.minimal-popup .leaflet-popup-tip-container {
+  display: none !important;
+}
+
+/* 4. Standart kapatma (X) butonunu gizle (ToolTipCard tasarımı için) */
+.minimal-popup .leaflet-popup-close-button {
+  display: none !important;
+}
+
+/* 5. Tooltip'in harita üzerinde diğer katmanların önüne geçmesini sağla */
+.leaflet-popup {
+  margin-bottom: 20px !important; /* Marker'dan biraz yukarıda durması için */
+}
+
+/* --- Yardımcı Sınıflar --- */
+
+/* Yatay kaydırma çubuklarını gizle ama kaydırmayı koru (Navbar için) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marker'lar için yumuşak geçiş */
+.leaflet-marker-icon {
+  transition: transform 0.2s ease-out;
 }
