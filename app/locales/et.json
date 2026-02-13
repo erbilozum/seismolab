@@ -9,6 +9,15 @@
     "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
     "buttonText": "Hästi"
   },
+  "consent": {
+    "title": "Isikuandmete kaitse teade",
+    "description": "Teie isikuandmete turvalisus on meile oluline. See veebirakendus kasutab üksnes anonüümseid statistilisi küpsiseid (külastuste arvu jälgimiseks) kooskõlas isikuandmete kaitse seadusega. Neid küpsiseid kasutatakse veebilehe kasutuskogemuse analüüsimiseks ilma teie isikut tuvastamata. Rakenduse kasutamiseks on vajalik küpsiste kasutamisega nõustumine.",
+    "privacyText": "Privaatsuspoliitika",
+    "cookieTest": "Küpsiste kasutamine",
+    "termsText": "Kasutustingimused",
+    "acceptButton": "Nõustun",
+    "rejectButton": "Keeldun"
+  },
   "marker": {
     "year": "Ehituskontrolli jõustumise kuupäev",
     "totalCollapsed": "Hävinud hoonete koguarv",

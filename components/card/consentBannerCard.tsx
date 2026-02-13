@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import Link from "next/link"
 import React, {useEffect, useState} from 'react'
 import TitleSmallCard from "@/components/card/titleSmallCard";
+import {useTranslation} from "react-i18next";
 
 interface GoogleConsentSettings {
     analytics_storage?: 'granted' | 'denied';
@@ -63,6 +64,7 @@ export default function ConsentBannerCard() {
         updateGoogleConsent('denied');
         setShow(false);
     }
+    const { t } = useTranslation();
 
     if (!show) return null;
     return (
@@ -79,30 +81,36 @@ export default function ConsentBannerCard() {
                             {/** CONTENT */}
                             <div className={"w-full flex flex-col justify-center leading-relaxed"}>
                                 {/** TITLE */}
-                                <p className={"text-gray-700 text-sm sm:text-base uppercase font-semibold"}>KVKK Bilgilendirmesi</p>
+                                <p className={"text-gray-700 text-sm sm:text-base uppercase font-semibold"}>{t("consent.title")}</p>
                                 {/** CONTENT */}
-                                <p className={"mt-2 text-justify text-sm sm:text-base sm:text-start"}>Kişisel verilerinizin güvenliği bizim için önemlidir.  Bu web uygulaması sadece KVKK’ya uygun şekilde <span className={"font-bold"}>anonimleştirilmiş istatistiksel çerezler</span> (giriş sayısı takibi) kullanılmaktadır. Bu çerezler, kimliğinizi belirlemeden site deneyiminizi analiz etmek amacıyla kullanılır. Uygulamanın kullanılması için çerez kullanımına izin verilmelidir.</p>
+                                <p className={"mt-2 text-justify text-sm sm:text-base sm:text-start"}>
+                                    {t("consent.description")}
+                                </p>
                                 {/** PRIVACY LINKS */}
                                 <div className={"flex flex-row w-full space-x-0 sm:space-x-2 mt-2 sm:mt-4"}>
                                     {/** PRIVACY POLICY */}
                                     <Link
-                                        aria-label={"gizlilik_politikası"}
+                                        aria-label={t("consent.privacyText")}
                                         href={"/privacy/privacy-policy"}
                                         target={"_blank"}
-                                        title={"Gizlilik Politikası"}
+                                        title={t("consent.privacyText")}
                                         className={"w-1/3 sm:w-full flex-row items-center group sm:mb-0"}>
-                                        <TitleSmallCard title={"Gizlilik Politikası"}/>
+                                        <TitleSmallCard title={t("consent.privacyText")}/>
                                     </Link>
                                     {/** COOKIE POLICY */}
-                                    <Link aria-label={"çerez_kullanımı"} href={"/privacy/cookie-policy"} target={"_blank"}
-                                          title={"Çerez Kullanımı"}
+                                    <Link
+                                        aria-label={t("consent.cookieText")}
+                                        href={"/privacy/cookie-policy"} target={"_blank"}
+                                          title={t("consent.cookieText")}
                                           className={"w-1/3 sm:w-full flex-row items-center group sm:mb-0"}>
-                                        <TitleSmallCard title={"Çerez Kullanımı"}/>
+                                        <TitleSmallCard title={t("consent.cookieText")}/>
                                     </Link>
                                     {/** TERMS AND CONDITIONS */}
-                                    <Link aria-label={"kullanım_şartları"} href={"/privacy/terms-and-conditions"} target={"_blank"}
-                                          title={"Kullanım Şartları"} className={"w-1/3 sm:w-full flex-row items-center group  sm:mb-0"}>
-                                        <TitleSmallCard title={"Kullanım Şartları"}/>
+                                    <Link
+                                        aria-label={t("consent.termsText")}
+                                        href={"/privacy/terms-and-conditions"} target={"_blank"}
+                                          title={t("consent.termsText")} className={"w-1/3 sm:w-full flex-row items-center group  sm:mb-0"}>
+                                        <TitleSmallCard title={t("consent.termsText")}/>
                                     </Link>
                                 </div>
                             </div>
@@ -111,21 +119,21 @@ export default function ConsentBannerCard() {
                                 {/** SAVE */}
                                 <div className={"relative group overflow-hidden hover:shadow-xl"}>
                                     <button
-                                        title={"Kabul Et"}
+                                        title={t("consent.acceptButton")}
                                         onClick={accept}
                                         type={"button"}
                                         className={"w-32 px-2 py-2 relative disabled:cursor-not-allowed hover:cursor-pointer group-hover:text-white z-50 delay-75 transition-all ease-in uppercase"}>
-                                        Kabul Et
+                                        {t("consent.acceptButton")}
                                     </button>
                                     <div className={"group-hover:rounded-none group-hover:w-full group-hover:h-full z-10 w-2 h-1 flex absolute bottom-0 left-0 bg-blue-500/70 transition-all ease-in"}></div>
                                 </div>
                                 {/** CANCEL */}
                                 <div className={"relative group overflow-hidden hover:shadow-xl"}>
                                     <button
-                                        title={"Reddet"}
+                                        title={t("consent.rejectButton")}
                                         onClick={deny}
                                         className={"w-32 px-2 py-2 relative disabled:cursor-not-allowed hover:cursor-pointer group-hover:text-white z-50 delay-75 transition-all ease-in uppercase"}>
-                                    Reddet
+                                        {t("consent.rejectButton")}
                                     </button>
                                     <div className={"group-hover:rounded-none group-hover:w-full group-hover:h-full z-10 w-2 h-1 flex absolute bottom-0 left-0 bg-black/70 transition-all ease-in"}></div>
                                 </div>

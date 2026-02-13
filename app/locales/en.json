@@ -9,6 +9,16 @@
     "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
     "buttonText": "Okay"
   },
+  "consent": {
+    "title": "Personal Data Protection Notice",
+    "description": "The security of your personal data is important to us. This web application uses only anonymized statistical cookies (for tracking the number of visits) in compliance with the Personal Data Protection Law. These cookies are used to analyze your site experience without identifying you. Permission for cookie usage is required to use the application.",
+    "privacyText": "Privacy Policy",
+    "cookieTest": "Cookie Usage",
+    "termsText": "Terms of Use",
+    "acceptButton": "Accept",
+    "rejectButton": "Reject"
+  },
+
   "marker": {
     "year": "Building Inspection Effective Date",
     "totalCollapsed": "Total Number of Buildings Destroyed",

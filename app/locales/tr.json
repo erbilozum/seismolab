@@ -9,6 +9,15 @@
     "linkSubText": "https://tr.wikipedia.org/wiki/2023_Kahramanmara%C5%9F_depremleri",
     "buttonText": "Tamam"
   },
+  "consent": {
+    "title": "KVKK Bilgilendirmesi",
+    "description": "Kişisel verilerinizin güvenliği bizim için önemlidir.  Bu web uygulaması sadece KVKK’ya uygun şekilde anonimleştirilmiş istatistiksel çerezler (giriş sayısı takibi) kullanılmaktadır. Bu çerezler, kimliğinizi belirlemeden site deneyiminizi analiz etmek amacıyla kullanılır. Uygulamanın kullanılması için çerez kullanımına izin verilmelidir.",
+    "privacyText": "Gizlilik Politikası",
+    "cookieTest": "Çerez Kullanımı",
+    "termsText": "Kullanım Şartları",
+    "acceptButton": "Kabul Et",
+    "rejectButton": "Reddet"
+  },
   "marker": {
     "year": "Yapı Denetim Yürürlülük Tarihi",
     "totalCollapsed": "Yıkılan Toplam Bina Sayısı",
