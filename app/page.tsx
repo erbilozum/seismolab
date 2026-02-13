@@ -9,6 +9,7 @@ import { FaRibbon } from "react-icons/fa";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer"; // Eski kodundaki ikon
 import disableDevtool from "disable-devtool";
+import ConsentBannerCard from "@/components/card/consentBannerCard";
 
 const MySwal = withReactContent(Swal);
 
@@ -95,6 +96,8 @@ export default function HomePage() {
 
             {/* Footer Katmanı */}
             <Footer />
+            <ConsentBannerCard/>
+
         </div>
     );
 }

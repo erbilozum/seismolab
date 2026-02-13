@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import I18nProvider from "@/components/I18nProvider";
 import {GoogleTagManager} from '@next/third-parties/google';
+import {appData} from "@/data/mainData";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -59,20 +60,18 @@ export default function RootLayout({
         <html lang="en">
         <head>
             <title>Türkiye earthquake Damage Stats | Interactive Visualization</title>
-            <GoogleTagManager gtmId="GTM-NFMXQTFH" />
             <script
                 dangerouslySetInnerHTML={{
                     __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('consent', 'default', {
-                        'ad_storage': 'granted',
-                        'ad_user_data': 'granted',
-                        'ad_personalization': 'granted',
-                        'analytics_storage': 'granted'
-                    });`,
-                }}
-            />
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'granted'
+               });`,}}/>
+            <GoogleTagManager gtmId={appData.googleTagId} />
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
         <I18nProvider>

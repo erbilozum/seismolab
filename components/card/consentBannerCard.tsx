@@ -19,18 +19,14 @@ interface CustomWindow extends Window {
     ) => void;
 }
 export default function ConsentBannerCard() {
+    // Başlangıçta false kalsın, böylece useEffect içinde setShow(false) demene gerek kalmaz
     const [show, setShow] = useState(false)
-    useEffect(() => {
-        const consent = localStorage.getItem('cookieConsent')
-        if (!consent) {
-            setTimeout(() => setShow(true), 5000)
-        }
-    }, [])
 
     const updateGoogleConsent = (status: 'granted' | 'denied') => {
         if (typeof window !== 'undefined') {
             const win = window as unknown as CustomWindow;
             if (typeof win.gtag === 'function') {
+                // BURASI ÖNEMLİ: 'default' değil 'update' olmalı
                 win.gtag('consent', 'update', {
                     'analytics_storage': status,
                     'ad_storage': status,
@@ -39,22 +35,42 @@ export default function ConsentBannerCard() {
                 });
             }
             if (win.dataLayer) {
-                win.dataLayer.push({ event: `consent_${status}` });
+                win.dataLayer.push({
+                    event: 'consent_update',
+                    consent_status: status
+                });
             }
         }
     }
+
+    useEffect(() => {
+        const consent = localStorage.getItem('cookieConsent');
+
+        if (consent) {
+            // Kullanıcı zaten seçim yapmışsa sadece sinyali gönder,
+            // setShow(false) demene gerek yok çünkü zaten başlangıç değeri false.
+            const status = consent === 'true' ? 'granted' : 'denied';
+            updateGoogleConsent(status);
+        } else {
+            // Seçim yapılmamışsa 2 saniye sonra banner'ı göster
+            const timer = setTimeout(() => setShow(true), 2000);
+            return () => clearTimeout(timer); // Bellek sızıntısını önlemek için temizle
+        }
+    }, []);
+
     const accept = () => {
-        localStorage.setItem('cookieConsent', 'true')
-        updateGoogleConsent('granted')
-        setShow(false)
+        localStorage.setItem('cookieConsent', 'true');
+        updateGoogleConsent('granted');
+        setShow(false);
     }
 
     const deny = () => {
-        localStorage.setItem('cookieConsent', 'false')
-        updateGoogleConsent('denied')
-        setShow(false)
+        localStorage.setItem('cookieConsent', 'false');
+        updateGoogleConsent('denied');
+        setShow(false);
     }
-    if (!show) return null
+
+    if (!show) return null;
     return (
         <div className={"fixed inset-0 z-50 backdrop-blur-xs font-montserrat"}>
             <div className={"absolute bottom-0"}>
