@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import I18nProvider from "@/components/I18nProvider";
-import Script from "next/script";
+import {appData} from "@/data/mainData";
+import {GoogleTagManager} from '@next/third-parties/google';
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -15,12 +16,12 @@ export const metadata: Metadata = {
     title: "Türkiye Earthquake Damage Stats | Interactive Visualization",
     description: "Interactive visualization and statistical analysis of earthquake damage in Turkey. Data-driven insights into structural impacts and supervised building reports.",
     keywords: ["Turkey Earthquake", "Earthquake Stats", "Seismic Data Visualization", "Building Damage Reports", "Interactive Map"],
-    authors: [{ name: "Your Name/Organization" }],
+    authors: [{ name: "ts.junior" }],
     robots: "index, follow",
     openGraph: {
         title: "Türkiye Earthquake Damage Stats",
         description: "Interactive visualization of seismic damage data.",
-        url: "https://your-domain.com", // Kendi domainini buraya yaz
+        url: "https://seismolab.vercel.app/",
         siteName: "EarthquakeStats",
         images: [
             {
@@ -55,19 +56,18 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
-            {/* Google Analytics (GA4) - 'G-XXXXXXXXXX' yerine kendi ID'ni yaz */}
-            <Script
-                src="https://www.googletagmanager.com/gtag/js?id=G-NFMXQTFH"
-                strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-                {`
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-                      gtag('config', 'G-XXXXXXXXXX');
-                    `}
-            </Script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'granted'
+               });`,}}/>
+            <GoogleTagManager gtmId={appData.googleTagId}/>
         </head>
         <body className={`${montserrat.className} bg-black antialiased`}>
         <I18nProvider>
