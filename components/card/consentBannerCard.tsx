@@ -21,12 +21,10 @@ interface CustomWindow extends Window {
 export default function ConsentBannerCard() {
     // Başlangıçta false kalsın, böylece useEffect içinde setShow(false) demene gerek kalmaz
     const [show, setShow] = useState(false)
-
     const updateGoogleConsent = (status: 'granted' | 'denied') => {
         if (typeof window !== 'undefined') {
             const win = window as unknown as CustomWindow;
             if (typeof win.gtag === 'function') {
-                // BURASI ÖNEMLİ: 'default' değil 'update' olmalı
                 win.gtag('consent', 'update', {
                     'analytics_storage': status,
                     'ad_storage': status,
@@ -42,13 +40,9 @@ export default function ConsentBannerCard() {
             }
         }
     }
-
     useEffect(() => {
         const consent = localStorage.getItem('cookieConsent');
-
         if (consent) {
-            // Kullanıcı zaten seçim yapmışsa sadece sinyali gönder,
-            // setShow(false) demene gerek yok çünkü zaten başlangıç değeri false.
             const status = consent === 'true' ? 'granted' : 'denied';
             updateGoogleConsent(status);
         } else {
@@ -72,7 +66,7 @@ export default function ConsentBannerCard() {
 
     if (!show) return null;
     return (
-        <div className={"fixed inset-0 z-50 backdrop-blur-xs font-montserrat"}>
+        <div className={"fixed  inset-0  z-50 backdrop-blur-xs font-montserrat"}>
             <div className={"absolute bottom-0"}>
                 <motion.div className={"flex text-gray-500 z-50 w-screen "}>
                         <motion.div

@@ -83,7 +83,7 @@ export default function HomePage() {
         }
     }, []);
     return (
-        <div className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="relative h-screen w-full overflow-hidden">
             {/* Harita Katmanı */}
             <main className="absolute inset-0 z-0">
                 <Maps selectedMapId={currentMapId} />
@@ -96,6 +96,7 @@ export default function HomePage() {
 
             {/* Footer Katmanı */}
             <Footer />
+
             <ConsentBannerCard/>
 
         </div>

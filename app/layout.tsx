@@ -73,7 +73,7 @@ export default function RootLayout({
                });`,}}/>
             <GoogleTagManager gtmId={appData.googleTagId} />
         </head>
-        <body className={`${montserrat.className} bg-black antialiased`}>
+        <body className={`${montserrat.className} antialiased bg-gray-50`}>
         <I18nProvider>
             {children}
         </I18nProvider>
